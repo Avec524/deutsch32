@@ -3,33 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI-ассистент по немецкому</title>
+  <title>AI-ассистент для изучения немецкого</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <h1>AI-ассистент для изучения немецкого языка</h1>
-    <p class="subtitle">Персональные уроки, грамматика и разговорная практика — всё в одном чате.</p>
-    <p class="price">Стоимость доступа: <strong>100 ₽</strong></p>
-
-    <!-- Кнопка оплаты -->
-    <button id="pay-button" class="green-button">Оплатить 100 ₽</button>
-
-    <!-- Скрытый блок для перехода к продукту -->
-    <div id="after-pay" style="display:none; margin-top:30px;">
-      <p>Спасибо за оплату! Перейти к продукту:</p>
-      <a href="https://deutsch23.vercel.app/assistant.html" class="green-button">Начать обучение</a>
-    </div>
+    <h1>AI-ассистент для изучения немецкого</h1>
+    <p>Персональные уроки и практика в чате</p>
+    <a class="green-button" href="payment.html">Перейти к оплате</a>
   </div>
-
-  <script>
-    document.getElementById('pay-button').addEventListener('click', () => {
-      // Открываем YooMoney в новой вкладке
-      window.open('https://yoomoney.ru/to/4100119007499838', '_blank');
-      
-      // Показываем ссылку «Начать обучение»
-      document.getElementById('after-pay').style.display = 'block';
-    });
-  </script>
 </body>
 </html>
