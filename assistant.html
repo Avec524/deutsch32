@@ -15,7 +15,7 @@
     
     <form id="chat-form">
       <input id="user-input" type="text" placeholder="Введите сообщение…" required />
-      <button type="submit" class="green-button">Отправить</button>
+      <button type="submit" class="primary-button">Отправить</button>
     </form>
   </div>
 
@@ -30,7 +30,6 @@
       const userMessage = input.value.trim();
       if (!userMessage) return;
       
-      // Добавляем сообщение пользователя
       const userDiv = document.createElement('div');
       userDiv.className = 'user';
       userDiv.textContent = 'Вы: ' + userMessage;
@@ -65,4 +64,3 @@
   </script>
 </body>
 </html>
-
