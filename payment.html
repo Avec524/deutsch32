@@ -5,13 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Оплата доступа</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #ffffff);
+      color: #111;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      animation: fadeIn 1s ease;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #555;
+    }
+    .green-button {
+      display: inline-block;
+      background: #28a745;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 16px 40px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 8px 16px rgba(40, 167, 69, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    .green-button:hover {
+      background: #218838;
+      transform: translateY(-2px);
+    }
+    .green-button::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.15);
+      animation: pulse 2s infinite;
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .green-button span {
+      position: relative;
+      z-index: 1;
+    }
+    .small-text {
+      font-size: 14px;
+      margin-top: 20px;
+      color: #777;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0); opacity: 1; }
+      100% { transform: scale(1); opacity: 0; }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1>Оплата доступа — 100 ₽</h1>
-    <p>Нажмите кнопку ниже, чтобы оплатить через YooMoney</p>
-    <a class="pay-button" target="_blank" href="https://yoomoney.ru/to/4100119007499838">Оплатить 100 ₽</a>
-    <p class="small-text">После оплаты вы получите доступ к AI-ассистенту.</p>
+    <p>Нажмите кнопку ниже для оплаты через YooMoney:</p>
+
+    <a 
+      href="https://yoomoney.ru/quickpay/confirm?receiver=4100119007499838&sum=100&successURL=https://deutsch23.vercel.app/assistant.html" 
+      class="green-button"
+      target="_blank">
+      <span>Оплатить 100 ₽</span>
+    </a>
+
+    <p class="small-text">После успешной оплаты вы автоматически перейдёте к продукту.</p>
   </div>
 </body>
 </html>
