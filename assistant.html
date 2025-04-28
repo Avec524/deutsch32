@@ -8,14 +8,14 @@
 </head>
 <body>
   <div class="container">
-    <h1>Ваш персональный AI-ассистент!</h1>
+    <h1>Добро пожаловать в чат с AI-ассистентом!</h1>
+    <p class="subtitle">Пишите на русском или немецком — ассистент всегда ответит на немецком и при необходимости объяснит на русском.</p>
 
     <div id="chat">
       <div id="messages"></div>
-
       <form id="chat-form">
         <input type="text" id="user-input" placeholder="Введите сообщение..." required />
-        <button type="submit">Отправить</button>
+        <button type="submit" class="green-button">Отправить</button>
       </form>
     </div>
   </div>
@@ -25,26 +25,25 @@
     const input = document.getElementById('user-input');
     const messages = document.getElementById('messages');
 
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
-      const userMessage = input.value.trim();
-      if (!userMessage) return;
+      const text = input.value.trim();
+      if (!text) return;
 
-      messages.innerHTML += `<div class="user-message"><strong>Вы:</strong> ${userMessage}</div>`;
+      messages.innerHTML += `<div class="message user"><strong>Вы:</strong> ${text}</div>`;
       input.value = '';
 
       try {
-        const response = await fetch('https://proggramwertyumer.app.n8n.cloud/webhook-test/german-assistant', {
+        const res = await fetch('https://proggramwertyumer.app.n8n.cloud/webhook-test/german-assistant', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: userMessage, user_id: 'user123' })
+          body: JSON.stringify({ user_id: 'user123', message: text })
         });
-
-        const data = await response.json();
-        messages.innerHTML += `<div class="bot-message"><strong>Бот:</strong> ${data.reply}</div>`;
+        const data = await res.json();
+        messages.innerHTML += `<div class="message bot"><strong>Бот:</strong> ${data.reply}</div>`;
         messages.scrollTop = messages.scrollHeight;
-      } catch (error) {
-        messages.innerHTML += `<div class="bot-message error"><strong>Ошибка:</strong> Не удалось получить ответ от сервера.</div>`;
+      } catch {
+        messages.innerHTML += `<div class="message error"><strong>Ошибка:</strong> не удалось получить ответ.</div>`;
       }
     });
   </script>
