@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Доступ к AI-ассистенту</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>AI-ассистент для изучения немецкого языка</h1>
+    <p>Получите доступ к персональному ассистенту для практики немецкого!</p>
+    <p><strong>Стоимость: 100 ₽</strong></p>
+
+    <button id="pay-button" class="button">Оплатить 100 ₽</button>
+
+    <p id="redirect-message" style="display:none; margin-top:20px;">Ожидаем оплату... Переход к продукту...</p>
+  </div>
+
+  <script>
+    document.getElementById('pay-button').addEventListener('click', function() {
+      window.open('https://yoomoney.ru/to/4100119007499838', '_blank');
+      document.getElementById('redirect-message').style.display = 'block';
+
+      setTimeout(function() {
+        window.location.href = "https://deutsch23.vercel.app/assistant.html";
+      }, 10000); // Ждем 10 секунд
+    });
+  </script>
+</body>
+</html>
