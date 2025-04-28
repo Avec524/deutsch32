@@ -5,12 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI-ассистент для изучения немецкого</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #ffffff);
+      color: #111;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .container {
+      background: #fff;
+      padding: 50px;
+      border-radius: 16px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 90%;
+      animation: fadeIn 1s ease;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #222;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #555;
+    }
+    .green-button {
+      display: inline-block;
+      background: #28a745;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 16px 40px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 8px 16px rgba(40, 167, 69, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    .green-button:hover {
+      background: #218838;
+      transform: translateY(-2px);
+    }
+    .green-button::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.15);
+      animation: pulse 2s infinite;
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .green-button span {
+      position: relative;
+      z-index: 1;
+    }
+    .note {
+      font-size: 14px;
+      color: #777;
+      margin-top: 20px;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0); opacity: 1; }
+      100% { transform: scale(1); opacity: 0; }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1>AI-ассистент для изучения немецкого</h1>
-    <p>Персональные уроки и практика в чате</p>
-    <a class="primary-button" href="payment.html">Перейти к оплате</a>
+    <p>Персональные уроки и практика в чате. Получите доступ к интерактивному обучению прямо сейчас!</p>
+
+    <a href="payment.html" class="green-button">
+      <span>Перейти к оплате</span>
+    </a>
+
+    <p class="note">Нажмите кнопку, чтобы начать обучение через оплату и получить доступ к продукту.</p>
   </div>
 </body>
 </html>
